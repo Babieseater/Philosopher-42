@@ -6,7 +6,7 @@
 /*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 12:54:07 by smayrand          #+#    #+#             */
-/*   Updated: 2022/12/06 16:38:42 by smayrand         ###   ########.fr       */
+/*   Updated: 2022/12/06 17:45:43 by smayrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ typedef struct s_philo
 	t_args			*data;
 }					t_philo;
 
+void			ft_one(t_args *data);
 int				ft_atoi(char *s);
 void			ft_isnum(char **argv, t_args *data);
 void			ft_error(char *msg, t_args *data);

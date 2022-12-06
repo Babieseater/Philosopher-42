@@ -6,11 +6,17 @@
 /*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:02:58 by smayrand          #+#    #+#             */
-/*   Updated: 2022/12/06 17:21:25 by smayrand         ###   ########.fr       */
+/*   Updated: 2022/12/06 17:59:33 by smayrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../philo.h"
+
+void	ft_one(t_args *data)
+{
+	printf("0 1 has taken a fork.\n");
+	printf("%d 1 died.\n", data->death_t);
+}
 
 void	ft_isnum(char **argv, t_args *data)
 {

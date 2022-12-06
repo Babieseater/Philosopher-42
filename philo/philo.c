@@ -6,7 +6,7 @@
 /*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 14:28:55 by smayrand          #+#    #+#             */
-/*   Updated: 2022/12/06 17:31:45 by smayrand         ###   ########.fr       */
+/*   Updated: 2022/12/06 18:06:01 by smayrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,16 @@ int	main(int argc, char **argv)
 {
 	t_args	data;
 	t_philo	*philo;
-	int		i;
 
-	i = 1;
-	data.error_flag = 0;
-	if (argc < 5 || argc > 6)
+	if ((argc < 5 || argc > 6) && data.error_flag != 1)
 		ft_error("Wrong amount of argument", &data);
-	ft_isnum(argv, &data);
-	ft_dispatch(&data, argv);
-	if ((data.philo_nb == 1 || data.death_t == 0) && data.error_flag != 1)
+	if (data.error_flag != 1)
 	{
-		printf("0 1 has taken a fork.\n");
-		printf("%d 1 died.\n", data.death_t);
+		ft_isnum(argv, &data);
+		ft_dispatch(&data, argv);
 	}
+	if ((data.philo_nb == 1 || data.death_t == 0) && data.error_flag != 1)
+		ft_one(&data);
 	else if (data.error_flag != 1)
 	{
 		philo = ft_philo_init(&data);
