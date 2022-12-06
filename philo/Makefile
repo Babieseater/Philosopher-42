@@ -6,7 +6,7 @@
 #    By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/10 12:54:03 by smayrand          #+#    #+#              #
-#    Updated: 2022/12/06 07:31:38 by smayrand         ###   ########.fr        #
+#    Updated: 2022/12/06 17:33:56 by smayrand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ srcs/cycles.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
-#	@afplay ./srcs/sounds/th.wav
+	@afplay ./srcs/sounds/th.wav
 	@echo " ==============="
 	@echo $(GREEN) "FULLY	COMPILED" $(NONE)
 	
@@ -43,7 +43,7 @@ clean:
 	@$(RM) $(OBJS)
 
 fclean: clean
-#	@afplay ./srcs/sounds/cry.wav
+	@afplay ./srcs/sounds/cry.wav
 	@$(RM) $(NAME)
 	@echo $(GREEN) "FULLY	CLEANED" $(NONE)
 
