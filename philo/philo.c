@@ -6,7 +6,7 @@
 /*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 14:28:55 by smayrand          #+#    #+#             */
-/*   Updated: 2022/12/06 18:06:01 by smayrand         ###   ########.fr       */
+/*   Updated: 2022/12/13 14:48:17 by smayrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	main(int argc, char **argv)
 	t_args	data;
 	t_philo	*philo;
 
+	philo = NULL;
 	if ((argc < 5 || argc > 6) && data.error_flag != 1)
 		ft_error("Wrong amount of argument", &data);
 	if (data.error_flag != 1)

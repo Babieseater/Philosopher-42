@@ -6,16 +6,32 @@
 /*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:02:58 by smayrand          #+#    #+#             */
-/*   Updated: 2022/12/06 17:59:33 by smayrand         ###   ########.fr       */
+/*   Updated: 2022/12/13 13:56:27 by smayrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../philo.h"
 
-void	ft_one(t_args *data)
+int	ft_one(t_args *data)
 {
-	printf("0 1 has taken a fork.\n");
-	printf("%d 1 died.\n", data->death_t);
+	t_philo	*philo;
+
+	philo = ft_philo_init(data);
+	pthread_mutex_lock(&data->starving);
+	printf("%lu %d has taken a fork.\n", ft_get_ms(philo), philo->philo_name);
+	if (ft_get_time() - philo->last_meal > data->death_t
+		&& data-> death_flag == 0)
+	{
+		data->death_flag = 1;
+		data->victim = philo->philo_name;
+		pthread_mutex_unlock(&data->starving);
+		printf("%d %d has died.\n", data->death_t, philo->philo_name);
+	}
+	if (data->fork_nb != 0)
+		free (data->fork_nb);
+	free(philo->mutex);
+	free(philo);
+	return (1);
 }
 
 void	ft_isnum(char **argv, t_args *data)
