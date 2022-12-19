@@ -6,7 +6,7 @@
 /*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 14:20:31 by smayrand          #+#    #+#             */
-/*   Updated: 2022/12/06 11:03:27 by smayrand         ###   ########.fr       */
+/*   Updated: 2022/12/19 14:00:32 by smayrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ pthread_mutex_t	*ft_mutex_init(t_args *data)
 	int				i;
 
 	i = 0;
+	mutex = NULL;
 	mutex = malloc(sizeof(pthread_mutex_t) * data->philo_nb);
 	if (!mutex)
 		return (NULL);
