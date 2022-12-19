@@ -6,7 +6,7 @@
 /*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:02:58 by smayrand          #+#    #+#             */
-/*   Updated: 2022/12/13 13:56:27 by smayrand         ###   ########.fr       */
+/*   Updated: 2022/12/19 14:08:49 by smayrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ int	ft_one(t_args *data)
 		pthread_mutex_unlock(&data->starving);
 		printf("%d %d has died.\n", data->death_t, philo->philo_name);
 	}
-	if (data->fork_nb != 0)
-		free (data->fork_nb);
 	free(philo->mutex);
 	free(philo);
 	return (1);

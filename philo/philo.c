@@ -6,7 +6,7 @@
 /*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 14:28:55 by smayrand          #+#    #+#             */
-/*   Updated: 2022/12/13 14:48:17 by smayrand         ###   ########.fr       */
+/*   Updated: 2022/12/19 14:03:38 by smayrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	main(int argc, char **argv)
 	}
 	if ((data.philo_nb == 1 || data.death_t == 0) && data.error_flag != 1)
 		ft_one(&data);
-	else if (data.error_flag != 1)
+	else if (data.error_flag != 1 && data.philo_nb > 1)
 	{
 		philo = ft_philo_init(&data);
 		if (!philo)
